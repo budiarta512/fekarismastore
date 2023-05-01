@@ -35,6 +35,10 @@ const showUser = async (id: string) => {
   return await api.get("v1/user/show" + id);
 };
 
+const deleteUser = async (id: string) => {
+  return await api.delete("v1/user/" + id);
+};
+
 export default {
   fetchUser,
   showUser,
@@ -42,4 +46,5 @@ export default {
   loginUser,
   verify,
   logoutUser,
+  deleteUser,
 };

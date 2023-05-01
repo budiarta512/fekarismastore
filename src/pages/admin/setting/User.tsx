@@ -3,7 +3,7 @@ import { NavLink, useNavigate } from "react-router-dom";
 import Breadcrumb from "../../../components/header/Breadcrumb";
 import CustomTable from "../../../components/table/CustomTable";
 import { useAppDispatch, useAppSelector } from "../../../redux/store";
-import { fetchUser } from "../../../redux/features/userSlice";
+import { deleteUser, fetchUser } from "../../../redux/features/userSlice";
 import ButtonLink from "../../../components/button/ButtonLink";
 
 const User = () => {
@@ -16,7 +16,20 @@ const User = () => {
   }, []);
 
   const deleteHandle = (arg: string) => {
-    //
+    dispatch(deleteUser(arg)).then((res) => {
+      if (res.meta.requestStatus === "fulfilled") {
+        navigate("/admin/user", {
+          state: {
+            message: "user deleted successfuly",
+            status: "success",
+          },
+        });
+      } else {
+        navigate("/admin/user", {
+          state: { message: "delete user failed", status: "fail" },
+        });
+      }
+    });
   };
   return (
     <div>

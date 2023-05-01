@@ -95,6 +95,22 @@ export const verify = createAsyncThunk(
   }
 );
 
+export const deleteUser = createAsyncThunk(
+  "supplier/deleteUser",
+  async (id: string, { rejectWithValue }) => {
+    try {
+      const response = await userService.deleteUser(id);
+      if (response.status === 200) {
+        return response;
+      } else {
+        return rejectWithValue(response.data);
+      }
+    } catch (err: any) {
+      return rejectWithValue(err.response.data);
+    }
+  }
+);
+
 const userSlice = createSlice({
   name: "user",
   initialState,
@@ -162,6 +178,18 @@ const userSlice = createSlice({
       .addCase(verify.fulfilled, (state, action) => {
         state.status = "succeed";
         state.user = action.payload.data.data.user;
+      })
+
+      // deleteUser
+      .addCase(deleteUser.pending, (state) => {
+        state.status = "loading";
+      })
+      .addCase(deleteUser.rejected, (state, action) => {
+        state.status = "failed";
+        state.errorMsg = action.payload;
+      })
+      .addCase(deleteUser.fulfilled, (state) => {
+        state.status = "succeed";
       });
   },
 });
