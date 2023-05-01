@@ -11,6 +11,8 @@ import UpdateSupplier from "../pages/admin/supplier/UpdateSupplier";
 import UpdateProduct from "../pages/admin/product/UpdateProduct";
 import Cart from "../pages/admin/cart/Cart";
 import Transaction from "../pages/admin/transaction/Transaction";
+import User from "../pages/admin/setting/User";
+import CreateUser from "../pages/admin/setting/CreateUser";
 
 type props = {
   open: boolean;
@@ -110,6 +112,24 @@ const AdminRoutes = ({ open, isLogin }: props) => {
           element={
             <PrivateRoute isLogin={isLogin}>
               <Transaction />
+            </PrivateRoute>
+          }
+        />
+
+        {/* user */}
+        <Route
+          path="/admin/user"
+          element={
+            <PrivateRoute isLogin={isLogin}>
+              <User />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/admin/user/create"
+          element={
+            <PrivateRoute isLogin={isLogin}>
+              <CreateUser />
             </PrivateRoute>
           }
         />

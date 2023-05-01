@@ -170,7 +170,7 @@ const Product = () => {
           data={data || []}
           initialPageSIze={10}
           nodeHeader={
-            <ButtonLink name="Create Product" to="/admin/product/create" />
+            <ButtonLink name="Buat Produk" to="/admin/product/create" />
           }
           options={{ isFilterActive: true, isPagination: true }}
         />

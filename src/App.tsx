@@ -69,7 +69,7 @@ function App() {
   }, [pathname]);
 
   return (
-    <div className={`App min-h-screen bg-white w-full `}>
+    <div className={`App min-h-screen bg-white w-full overflow-x-hidden`}>
       <ToastContainer autoClose={3000} />
       {/* layout */}
       {isLogin ? (

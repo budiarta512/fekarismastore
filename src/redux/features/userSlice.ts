@@ -68,7 +68,7 @@ export const registerUser = createAsyncThunk(
   async (data: IRegister, { rejectWithValue }) => {
     try {
       const response = await userService.registerUser(data);
-      if (response.status === 200) {
+      if (response.status === 201) {
         return response;
       } else {
         return rejectWithValue(response.data.errors);

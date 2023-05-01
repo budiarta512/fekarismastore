@@ -30,18 +30,16 @@ const AdminLayout = ({ open, setOpen }: props) => {
       {/* navbar */}
       <div className="fixed right-0 top-0 z-30 w-full bg-white shadow-md h-16">
         <div className="flex justify-between items-center h-full mx-6">
-          <ul className="flex justify-start items-center w-full h-full">
+          <ul className="flex justify-start items-center w-full h-full gap-2">
             <img className="w-36" src={logo} alt="logo" />
-            <li className="px-2">
-              <button
-                className="bg-red-500/20 shadow-none hover:shadow-none hover:bg-primary text-red-500 hover:text-white rounded-md py-1 px-2"
-                onClick={() => setOpen(!open)}
-              >
-                <i className="bi bi-list text-xl"></i>
-              </button>
-            </li>
+            <button
+              className="bg-red-500/20 shadow-none hover:shadow-none hover:bg-primary text-red-500 hover:text-white rounded-md py-1 px-2"
+              onClick={() => setOpen(!open)}
+            >
+              <i className="bi bi-list text-xl"></i>
+            </button>
           </ul>
-          <ul className="flex gap-2 justify-end items-center w-full h-full">
+          <ul className="flex gap-2 justify-end items-center w-auto sm:w-full h-full">
             <li className="flex items-center justify-center h-10 w-10 rounded-full bg-red-100 hover:bg-red-200 text-lg text-gray-600">
               <NavLink
                 className="w-full h-full flex items-center justify-center"
@@ -75,7 +73,7 @@ const AdminLayout = ({ open, setOpen }: props) => {
       >
         <div className="flex items-center justify-center"></div>
         <ul className="flex flex-col py-4">
-          <li>
+          <li className="mt-16">
             <NavLink
               to="/admin"
               className="flex flex-row items-center h-12 transform hover:translate-x-2 transition-transform ease-in duration-200 text-gray-500 hover:text-gray-800"
@@ -121,13 +119,13 @@ const AdminLayout = ({ open, setOpen }: props) => {
           </li>
           <li>
             <NavLink
-              to="/admin/setting"
+              to="/admin/user"
               className="flex flex-row items-center h-12 transform hover:translate-x-2 transition-transform ease-in duration-200 text-gray-500 hover:text-gray-800"
             >
               <span className="inline-flex items-center justify-center h-12 w-12 text-lg text-gray-400">
-                <i className="bi bi-gear"></i>
+                <i className="bi bi-person"></i>
               </span>
-              <span className="text-sm font-medium">Settings</span>
+              <span className="text-sm font-medium">User</span>
             </NavLink>
           </li>
           <li>
