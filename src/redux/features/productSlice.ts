@@ -1,5 +1,5 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { IProduct, IUser } from "../../utils/types";
+import { IProduct } from "../../utils/types";
 import productService from "../../services/productService";
 
 export interface UserState {

@@ -15,8 +15,10 @@ const loginUser = async (data: ILogin) => {
   return login;
 };
 
-const verify = async () => {
-  return await api.post("v1/user/verify");
+const verify = async (options: string | undefined) => {
+  return await api.post(
+    "v1/user/verify" + options !== undefined ? "/" + options : ""
+  );
 };
 
 const logoutUser = async () => {

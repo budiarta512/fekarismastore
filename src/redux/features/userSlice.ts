@@ -81,9 +81,9 @@ export const registerUser = createAsyncThunk(
 
 export const verify = createAsyncThunk(
   "user/verify",
-  async (a, { rejectWithValue }) => {
+  async (options: string | undefined, { rejectWithValue }) => {
     try {
-      const response = await userService.verify();
+      const response = await userService.verify(options);
       if (response.status === 200) {
         return response;
       } else {
