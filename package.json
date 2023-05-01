@@ -2,7 +2,7 @@
   "name": "fekarismastore",
   "private": true,
   "version": "0.0.0",
-  "homepage": "https://budiarta512.github.io/karismastore",
+  "homepage": "https://budiarta512.github.io/fekarismastore",
   "type": "module",
   "scripts": {
     "predeploy": "npm run build",
