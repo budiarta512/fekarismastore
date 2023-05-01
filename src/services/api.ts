@@ -1,13 +1,13 @@
 import axios from "axios";
 import Token from "./token";
-import { API_URI } from "./../utils/env";
+import { API_URI, PRODUCTION_API_URI } from "./../utils/env";
 
-const production = false;
+const production = true;
 
 let baseURL;
 
 if (production) {
-  baseURL = API_URI;
+  baseURL = PRODUCTION_API_URI;
 } else {
   baseURL = API_URI;
 }
