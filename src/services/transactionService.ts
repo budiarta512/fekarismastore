@@ -1,8 +1,10 @@
 import { IStoreTransaction } from "../utils/types";
 import { api } from "./api";
 
-const fetchTransaction = async () => {
-  return await api.get("v1/transaction");
+const fetchTransaction = async (options: string | undefined) => {
+  return await api.get(
+    "v1/transaction" + options !== undefined ? "/" + options : ""
+  );
 };
 
 const showTransaction = async (id: string) => {

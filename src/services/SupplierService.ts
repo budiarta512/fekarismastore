@@ -1,8 +1,10 @@
 import { IStoreSupplier } from "../utils/types";
 import { api } from "./api";
 
-const fetchSupplier = async () => {
-  return await api.get("v1/supplier");
+const fetchSupplier = async (options: string | undefined) => {
+  return await api.get(
+    "v1/supplier" + options !== undefined ? "/" + options : ""
+  );
 };
 
 const showSupplier = async (id: string) => {

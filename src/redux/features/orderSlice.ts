@@ -18,9 +18,9 @@ const initialState: OrderState = {
 
 export const fetchOrder = createAsyncThunk(
   "order/fetchOrder",
-  async (e, { rejectWithValue }) => {
+  async (options: string | undefined, { rejectWithValue }) => {
     try {
-      const response = await orderService.fetchOrder();
+      const response = await orderService.fetchOrder(options);
       return response;
     } catch (err) {
       return rejectWithValue(err);

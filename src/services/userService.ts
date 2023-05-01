@@ -2,8 +2,8 @@ import { getToken } from "../utils/auth";
 import { api } from "./api";
 import { ILogin, IRegister } from "../utils/types";
 
-const fetchUser = async () => {
-  return await api.get("v1/user");
+const fetchUser = async (options: string | undefined) => {
+  return await api.get("v1/user" + options !== undefined ? "/" + options : "");
 };
 
 const registerUser = async (data: IRegister) => {

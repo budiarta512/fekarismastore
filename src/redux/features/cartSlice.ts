@@ -20,9 +20,9 @@ const initialState: CartState = {
 
 export const fetchCart = createAsyncThunk(
   "cart/fetchCart",
-  async (e, { rejectWithValue }) => {
+  async (options: string | undefined, { rejectWithValue }) => {
     try {
-      const response = await cartService.fetchCart();
+      const response = await cartService.fetchCart(options);
       return response;
     } catch (err) {
       return rejectWithValue(err);

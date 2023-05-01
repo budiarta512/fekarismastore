@@ -18,9 +18,9 @@ const initialState: UserState = {
 
 export const fetchProduct = createAsyncThunk(
   "product/fetchProduct",
-  async (e, { rejectWithValue }) => {
+  async (options: string | undefined, { rejectWithValue }) => {
     try {
-      const response = await productService.fetchProduct();
+      const response = await productService.fetchProduct(options);
       return response;
     } catch (err) {
       return rejectWithValue(err);

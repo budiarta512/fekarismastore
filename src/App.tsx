@@ -8,7 +8,7 @@ import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer, toast } from "react-toastify";
 import { useLocation, useNavigate } from "react-router-dom";
 import { verify } from "./redux/features/userSlice";
-import { getToken, logout, setUser } from "./utils/auth";
+import { getToken, logout } from "./utils/auth";
 import UserLayout from "./layout/UserLayout";
 
 function App() {

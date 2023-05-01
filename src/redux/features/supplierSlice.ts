@@ -18,9 +18,9 @@ const initialState: SupplierState = {
 
 export const fetchSupplier = createAsyncThunk(
   "supplier/fetchSupplier",
-  async (e, { rejectWithValue }) => {
+  async (options: string | undefined, { rejectWithValue }) => {
     try {
-      const response = await SupplierService.fetchSupplier();
+      const response = await SupplierService.fetchSupplier(options);
       return response;
     } catch (err) {
       return rejectWithValue(err);

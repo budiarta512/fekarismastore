@@ -18,9 +18,9 @@ const initialState: TraansactionState = {
 
 export const fetchTransaction = createAsyncThunk(
   "transaction/fetchTransaction",
-  async (e, { rejectWithValue }) => {
+  async (options: string | undefined, { rejectWithValue }) => {
     try {
-      const response = await transactionService.fetchTransaction();
+      const response = await transactionService.fetchTransaction(options);
       return response;
     } catch (err) {
       return rejectWithValue(err);
