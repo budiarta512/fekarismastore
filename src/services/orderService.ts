@@ -1,4 +1,4 @@
-import { api, apiFormData } from "./api";
+import { api } from "./api";
 
 const fetchOrder = async () => {
   return await api.get("v1/order");

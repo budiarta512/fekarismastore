@@ -1,8 +1,6 @@
-import React, { ReactNode, useEffect, useMemo, useState } from "react";
+import { ReactNode, useEffect, useMemo, useState } from "react";
 import {
   useTable,
-  Column,
-  useFilters,
   useGlobalFilter,
   usePagination,
   useSortBy,
@@ -83,7 +81,6 @@ const CustomTable = (props: CustomTableProps) => {
     getTableProps,
     getTableBodyProps,
     prepareRow,
-    rows,
     state,
     setGlobalFilter,
     pageOptions,
@@ -265,7 +262,7 @@ const CustomTable = (props: CustomTableProps) => {
                     <Button disabled={!canGoBack} onClick={onPrevPage}>
                       <i className="bi bi-chevron-left"></i>
                     </Button>{" "}
-                    {pagesArr.map((num, index) => {
+                    {pagesArr.map((index) => {
                       return index + 1 === currentPage ||
                         index + 2 === currentPage ||
                         index + 3 === currentPage ||

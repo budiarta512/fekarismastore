@@ -1,5 +1,5 @@
 import { IStoreCart } from "../utils/types";
-import { api, apiFormData } from "./api";
+import { api } from "./api";
 
 const fetchCart = async () => {
   return await api.get("v1/cart");

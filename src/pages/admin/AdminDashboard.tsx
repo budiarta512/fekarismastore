@@ -1,4 +1,4 @@
-const AdminDashboard = (user: any) => {
+const AdminDashboard = () => {
   return <div>AdminDashboard</div>;
 };
 

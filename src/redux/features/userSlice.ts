@@ -103,7 +103,7 @@ const userSlice = createSlice({
     builder
 
       // fetchUser
-      .addCase(fetchUser.pending, (state, action) => {
+      .addCase(fetchUser.pending, (state) => {
         state.status = "loading";
       })
       .addCase(fetchUser.rejected, (state, action) => {
@@ -116,10 +116,10 @@ const userSlice = createSlice({
       })
 
       // showUser
-      .addCase(showUser.pending, (state, action) => {
+      .addCase(showUser.pending, (state) => {
         state.status = "loading";
       })
-      .addCase(showUser.rejected, (state, action) => {
+      .addCase(showUser.rejected, (state) => {
         state.status = "failed";
       })
       .addCase(showUser.fulfilled, (state, action) => {
@@ -128,31 +128,31 @@ const userSlice = createSlice({
       })
 
       // loginUser
-      .addCase(loginUser.pending, (state, action) => {
+      .addCase(loginUser.pending, (state) => {
         state.status = "loading";
       })
       .addCase(loginUser.rejected, (state, action) => {
         state.status = "failed";
         state.errorMsg = action.payload;
       })
-      .addCase(loginUser.fulfilled, (state, action) => {
+      .addCase(loginUser.fulfilled, (state) => {
         state.status = "succeed";
       })
 
       // registerUser
-      .addCase(registerUser.pending, (state, action) => {
+      .addCase(registerUser.pending, (state) => {
         state.status = "loading";
       })
       .addCase(registerUser.rejected, (state, action) => {
         state.status = "failed";
         state.errorMsg = action.payload;
       })
-      .addCase(registerUser.fulfilled, (state, action) => {
+      .addCase(registerUser.fulfilled, (state) => {
         state.status = "succeed";
       })
 
       // verify
-      .addCase(verify.pending, (state, action) => {
+      .addCase(verify.pending, (state) => {
         state.status = "loading";
       })
       .addCase(verify.rejected, (state, action) => {

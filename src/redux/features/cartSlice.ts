@@ -102,7 +102,7 @@ const cartSlice = createSlice({
     builder
 
       // fetchCart
-      .addCase(fetchCart.pending, (state, action) => {
+      .addCase(fetchCart.pending, (state) => {
         state.status = "loading";
       })
       .addCase(fetchCart.rejected, (state, action) => {
@@ -115,10 +115,10 @@ const cartSlice = createSlice({
       })
 
       // showCart
-      .addCase(showCart.pending, (state, action) => {
+      .addCase(showCart.pending, (state) => {
         state.status = "loading";
       })
-      .addCase(showCart.rejected, (state, action) => {
+      .addCase(showCart.rejected, (state) => {
         state.status = "failed";
       })
       .addCase(showCart.fulfilled, (state, action) => {
@@ -127,38 +127,38 @@ const cartSlice = createSlice({
       })
 
       // storeCart
-      .addCase(storeCart.pending, (state, action) => {
+      .addCase(storeCart.pending, (state) => {
         state.status = "loading";
       })
       .addCase(storeCart.rejected, (state, action) => {
         state.status = "failed";
         state.errorMsg = action.payload;
       })
-      .addCase(storeCart.fulfilled, (state, action) => {
+      .addCase(storeCart.fulfilled, (state) => {
         state.status = "succeed";
       })
 
       // updateCart
-      .addCase(updateCart.pending, (state, action) => {
+      .addCase(updateCart.pending, (state) => {
         state.status = "loading";
       })
       .addCase(updateCart.rejected, (state, action) => {
         state.status = "failed";
         state.errorMsg = action.payload;
       })
-      .addCase(updateCart.fulfilled, (state, action) => {
+      .addCase(updateCart.fulfilled, (state) => {
         state.status = "succeed";
       })
 
       // deleteCart
-      .addCase(deleteCart.pending, (state, action) => {
+      .addCase(deleteCart.pending, (state) => {
         state.status = "loading";
       })
       .addCase(deleteCart.rejected, (state, action) => {
         state.status = "failed";
         state.errorMsg = action.payload;
       })
-      .addCase(deleteCart.fulfilled, (state, action) => {
+      .addCase(deleteCart.fulfilled, (state) => {
         state.status = "succeed";
       });
   },

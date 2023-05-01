@@ -55,7 +55,7 @@ const UpdateSupplier = () => {
           }}
           onSubmit={(value) => submitHandle(value)}
         >
-          {(props) => (
+          {() => (
             <Form className="flex flex-col gap-4">
               <div>
                 <label className="form-label" htmlFor="name">

@@ -1,5 +1,3 @@
-import React from "react";
-
 const FilterTable = (props: {
   filter: string;
   setFilter: (filter: any) => any;

@@ -108,7 +108,7 @@ const orderSlice = createSlice({
     builder
 
       // fetchOrder
-      .addCase(fetchOrder.pending, (state, action) => {
+      .addCase(fetchOrder.pending, (state) => {
         state.status = "loading";
       })
       .addCase(fetchOrder.rejected, (state, action) => {
@@ -121,10 +121,10 @@ const orderSlice = createSlice({
       })
 
       // showOrder
-      .addCase(showOrder.pending, (state, action) => {
+      .addCase(showOrder.pending, (state) => {
         state.status = "loading";
       })
-      .addCase(showOrder.rejected, (state, action) => {
+      .addCase(showOrder.rejected, (state) => {
         state.status = "failed";
       })
       .addCase(showOrder.fulfilled, (state, action) => {
@@ -133,10 +133,10 @@ const orderSlice = createSlice({
       })
 
       // showOrderByUserId
-      .addCase(showOrderByUserId.pending, (state, action) => {
+      .addCase(showOrderByUserId.pending, (state) => {
         state.status = "loading";
       })
-      .addCase(showOrderByUserId.rejected, (state, action) => {
+      .addCase(showOrderByUserId.rejected, (state) => {
         state.status = "failed";
       })
       .addCase(showOrderByUserId.fulfilled, (state, action) => {
@@ -145,38 +145,38 @@ const orderSlice = createSlice({
       })
 
       // storeOrder
-      .addCase(storeOrder.pending, (state, action) => {
+      .addCase(storeOrder.pending, (state) => {
         state.status = "loading";
       })
       .addCase(storeOrder.rejected, (state, action) => {
         state.status = "failed";
         state.errorMsg = action.payload;
       })
-      .addCase(storeOrder.fulfilled, (state, action) => {
+      .addCase(storeOrder.fulfilled, (state) => {
         state.status = "succeed";
       })
 
       // updateOrder
-      .addCase(updateOrder.pending, (state, action) => {
+      .addCase(updateOrder.pending, (state) => {
         state.status = "loading";
       })
       .addCase(updateOrder.rejected, (state, action) => {
         state.status = "failed";
         state.errorMsg = action.payload;
       })
-      .addCase(updateOrder.fulfilled, (state, action) => {
+      .addCase(updateOrder.fulfilled, (state) => {
         state.status = "succeed";
       })
 
       // deleteOrder
-      .addCase(deleteOrder.pending, (state, action) => {
+      .addCase(deleteOrder.pending, (state) => {
         state.status = "loading";
       })
       .addCase(deleteOrder.rejected, (state, action) => {
         state.status = "failed";
         state.errorMsg = action.payload;
       })
-      .addCase(deleteOrder.fulfilled, (state, action) => {
+      .addCase(deleteOrder.fulfilled, (state) => {
         state.status = "succeed";
       });
   },
