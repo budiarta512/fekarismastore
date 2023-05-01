@@ -3,7 +3,9 @@ import { api } from "./api";
 import { ILogin, IRegister } from "../utils/types";
 
 const fetchUser = async (options: string | undefined) => {
-  return await api.get("v1/user" + options !== undefined ? "/" + options : "");
+  return await api.get(
+    "v1/user" + (options === undefined ? "" : "/" + options)
+  );
 };
 
 const registerUser = async (data: IRegister) => {
@@ -17,7 +19,7 @@ const loginUser = async (data: ILogin) => {
 
 const verify = async (options: string | undefined) => {
   return await api.post(
-    "v1/user/verify" + options !== undefined ? "/" + options : ""
+    "v1/user/verify" + (options === undefined ? "" : "/" + options)
   );
 };
 

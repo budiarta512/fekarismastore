@@ -2,7 +2,7 @@ import { api, apiFormData } from "./api";
 
 const fetchProduct = async (options: string | undefined) => {
   return await api.get(
-    "v1/product" + options !== undefined ? "/" + options : ""
+    "v1/product" + (options === undefined ? "" : "/" + options)
   );
 };
 

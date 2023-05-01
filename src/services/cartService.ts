@@ -2,7 +2,9 @@ import { IStoreCart } from "../utils/types";
 import { api } from "./api";
 
 const fetchCart = async (options: string | undefined) => {
-  return await api.get("v1/cart" + options !== undefined ? "/" + options : "");
+  return await api.get(
+    "v1/cart" + (options === undefined ? "" : "/" + options)
+  );
 };
 
 const showCart = async (id: string) => {

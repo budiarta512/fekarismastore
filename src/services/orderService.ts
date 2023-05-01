@@ -1,7 +1,9 @@
 import { api } from "./api";
 
 const fetchOrder = async (options: string | undefined) => {
-  return await api.get("v1/order" + options !== undefined ? "/" + options : "");
+  return await api.get(
+    "v1/order" + (options === undefined ? "" : "/" + options)
+  );
 };
 
 const showOrder = async (id: string) => {

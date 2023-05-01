@@ -3,7 +3,7 @@ import { api } from "./api";
 
 const fetchTransaction = async (options: string | undefined) => {
   return await api.get(
-    "v1/transaction" + options !== undefined ? "/" + options : ""
+    "v1/transaction" + (options === undefined ? "" : "/" + options)
   );
 };
 

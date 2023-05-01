@@ -3,7 +3,7 @@ import { api } from "./api";
 
 const fetchSupplier = async (options: string | undefined) => {
   return await api.get(
-    "v1/supplier" + options !== undefined ? "/" + options : ""
+    "v1/supplier" + (options === undefined ? "" : "/" + options)
   );
 };
 
